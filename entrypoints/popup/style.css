@@ -1,0 +1,45 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-fog: #eef2ef;
+  --color-pine: #123a33;
+  --color-sage: #5b7b72;
+  --color-glow: #35d6a0;
+  --color-line: #d3ddd7;
+  --font-sans: 'Avenir Next', 'Segoe UI Variable', 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+}
+
+/* The wordmark's waveform: still when idle, moving while Hark is reading. */
+.wave span {
+  width: 3px;
+  border-radius: 2px;
+  background: var(--color-pine);
+  height: 8px;
+  transition: height 0.2s;
+}
+.wave span:nth-child(2) { height: 16px; }
+.wave span:nth-child(3) { height: 22px; }
+.wave span:nth-child(4) { height: 12px; }
+
+.wave.speaking span {
+  background: var(--color-glow);
+  animation: pulse 0.9s ease-in-out infinite;
+}
+.wave.speaking span:nth-child(2) { animation-delay: 0.12s; }
+.wave.speaking span:nth-child(3) { animation-delay: 0.24s; }
+.wave.speaking span:nth-child(4) { animation-delay: 0.36s; }
+.wave.speaking span:nth-child(5) { animation-delay: 0.48s; }
+
+@keyframes pulse {
+  0%, 100% { height: 6px; }
+  50% { height: 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wave.speaking span { animation: none; height: 14px; }
+}
