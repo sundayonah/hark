@@ -1,0 +1,18 @@
+:root{--bg:#eef2ef;--ink:#123a33;--muted:#5b7b72;--accent:#35d6a0;--line:#d3ddd7;--card:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#0e2a25;--ink:#eef2ef;--muted:#9bb8ae;--line:#1f4a41;--card:#123a33}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 "Avenir Next","Segoe UI Variable","Segoe UI",system-ui,sans-serif}
+main{max-width:680px;margin:0 auto;padding:56px 22px 80px}
+h1{font-size:2.4rem;line-height:1.15;letter-spacing:-.02em;margin:.2em 0 .3em}
+h2{font-size:1.25rem;margin:2em 0 .4em}
+p,li{color:var(--ink)} .muted{color:var(--muted)}
+a{color:var(--ink);text-decoration-color:var(--accent);text-underline-offset:3px;text-decoration-thickness:2px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:600;font-size:1.3rem}
+.wave{display:flex;align-items:center;gap:3px;height:26px}
+.wave span{width:3px;border-radius:2px;background:var(--accent)}
+.wave span:nth-child(1),.wave span:nth-child(5){height:9px}
+.wave span:nth-child(2),.wave span:nth-child(4){height:17px}
+.wave span:nth-child(3){height:25px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:6px 22px;margin:28px 0}
+footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
+footer a{color:var(--muted)}
